@@ -1,0 +1,40 @@
+{
+  "name": "roupas-rotulo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "webpack-dev-server --inline --hot"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-if": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.2",
+    "html-webpack-plugin": "^2.22.0",
+    "postcss-loader": "^0.13.0",
+    "raw-loader": "^0.5.1",
+    "script-ext-html-webpack-plugin": "^1.3.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daymannovaes/roupas-rotulo.git"
+  },
+  "author": "Dayman Novaes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daymannovaes/roupas-rotulo/issues"
+  },
+  "homepage": "https://github.com/Daymannovaes/roupas-rotulo#readme",
+  "dependencies": {
+    "jquery": "^2.2.0"
+  }
+}
