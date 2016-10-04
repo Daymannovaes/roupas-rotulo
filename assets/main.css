@@ -53,9 +53,9 @@ nav a:hover {
 
 
 .slider-for {
-  height: 90%;
-  max-width: 90%;
-  margin: 0 auto;
+  height: calc(90% - 9px);
+  max-width: calc(100% - 70px);
+  margin: 0 auto 5px;
 }
 .slider-for > div {
   height: 100%;
@@ -64,10 +64,17 @@ nav a:hover {
 .slider-nav {
   height: 10%;
   max-width: 90%;
-
 }
 .flex {
   display: flex;
+}
+
+.slider-nav .slick-slide {
+  transition: all 200ms;
+}
+.slider-nav .slick-slide:not(.slick-current) {
+  transform: scale(0.9);
+  opacity: 0.6;
 }
 
 
