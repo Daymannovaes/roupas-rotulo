@@ -49,9 +49,6 @@ nav a:hover {
   color: #222;
 }
 
-
-
-
 .slider-for {
   height: calc(90% - 9px);
   max-width: calc(100% - 70px);
@@ -63,7 +60,7 @@ nav a:hover {
 
 .slider-nav {
   height: 10%;
-  max-width: 90%;
+  max-width: 100%;
 }
 .flex {
   display: flex;
@@ -90,6 +87,24 @@ nav a:hover {
 
 .slick-prev:before,
 .slick-next:before {
-    color: black;
+  color: #000;
 }
 
+.slick-prev,
+.slick-next {
+  display: block;
+  height: 100%;
+  width: 40px;
+  background: rgba(221, 221, 221, 0.2);
+  transition: all 200ms;
+}
+
+.slick-prev:hover,
+.slick-next:hover,
+.slick-prev:focus,
+.slick-next:focus {
+  display: block;
+  height: 100%;
+  width: 40px;
+  background: rgba(221, 221, 221, 0.5);
+}
