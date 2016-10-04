@@ -81,9 +81,16 @@ nav a:hover {
 }
 
 .slick-track,
-.slick-slide,
-.slick-slide img {
+.slick-slide {
   height: 100%;
+}
+.fillwidth {
+  width: 100%;
+  height: auto;
+}
+.fillheight {
+  height: 100%;
+  width: auto;
 }
 
 .slick-prev:before,

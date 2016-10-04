@@ -16,4 +16,24 @@ $(document).on('ready', function() {
       focusOnSelect: true,
       asNavFor: '.slider-for'
     });
+
+    var _timeout;
+    window.addEventListener('resize', function() {
+      clearTimeout(_timeout);
+      _timeout = setTimeout(checkImageContainer, 50);
+    });
+
+    function checkImageContainer() {
+      $('.slick-slide').each(function() {
+        var fillClass = ($(this).height() < $(this).width())
+          ? 'fillheight'
+          : 'fillwidth';
+        var removeClass = (fillClass === 'fillwidth')
+          ? 'fillheight'
+          : 'fillwidth';
+        $(this).find('img').addClass(fillClass);
+        $(this).find('img').removeClass(removeClass);
+      });
+    }
+    checkImageContainer();
 });
