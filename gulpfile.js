@@ -3,11 +3,25 @@ var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    minifyCss = require('gulp-clean-css');
+    minifyCss = require('gulp-clean-css'),
+    htmlmin = require('gulp-htmlmin'),
+    sequence = require('run-sequence');
 
-gulp.task('default', function () {
+gulp.task('htmlmin', function () {
+  return gulp.src('index.html')
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      removeComments: true,
+      removeRedundantAttributes: true,
+    }))
+    .pipe(gulp.dest(function(file) {
+      return file.base;
+    }));
+});
+
+gulp.task('bundle', function () {
   return gulp.src('index.src.html')
-    .pipe(useref())
+    .pipe(useref({ versioning: Date.now() }))
     .pipe(gulpif('*.js', uglify()))
     .pipe(gulpif('*.css', minifyCss()))
     .pipe(rename(function(path) {
@@ -16,4 +30,8 @@ gulp.task('default', function () {
     .pipe(gulp.dest(function(file) {
       return file.base;
     }));
+});
+
+gulp.task('default', function(done) {
+    sequence('bundle', 'htmlmin', done);
 });
