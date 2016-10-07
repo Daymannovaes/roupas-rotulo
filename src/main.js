@@ -1,15 +1,19 @@
 $(document).on('ready', function() {
   $('.slider-for').slick({
+    lazyLoad: 'progressive',
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,
-    asNavFor: '.slider-nav'
+    asNavFor: '.slider-nav',
+    autoplay: true,
+    autoplaySpeed: 10 * 1000
   });
 
   $('.slider-nav').on('init', function() {
     $(this).addClass('flex');
   }).slick({
+    lazyLoad: 'progressive',
     infinite: true,
     slidesToShow: 10,
     slidesToScroll: 1,

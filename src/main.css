@@ -63,11 +63,17 @@ nav a:hover {
   height: 10%;
   max-width: 100%;
 }
+
+.slider-nav .slick-list, .slider-nav .slick-track {
+  width: 100% !important;
+}
+
 .flex {
   display: flex;
 }
 
 .slider-nav .slick-slide {
+  max-width: 80px;
   transition: all 200ms;
 }
 .slider-nav .slick-slide:not(.slick-current) {

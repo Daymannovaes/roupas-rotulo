@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "static-server"
+    "start": "static-server -p 8080",
+    "deploy": "npm run build && npm run aws",
+    "build": "rm -rf assets/ && gulp",
+    "aws": "aws s3 rm s3://roupasrotulo.com/assets --recursive && aws s3 cp index.html s3://roupasrotulo.com --cache-control max-age=1800 && aws s3 cp assets/ s3://roupasrotulo.com/assets --recursive --cache-control max-age=31536000"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

@@ -20,12 +20,14 @@ gulp.task('htmlmin', function () {
 });
 
 gulp.task('bundle', function () {
+  var __v = Date.now();
   return gulp.src('index.src.html')
-    .pipe(useref({ versioning: Date.now() }))
+    .pipe(useref({ versioning: __v }))
     .pipe(gulpif('*.js', uglify()))
     .pipe(gulpif('*.css', minifyCss()))
     .pipe(rename(function(path) {
       if(path.basename === 'index.src') path.basename = 'index';
+      else path.basename += '.' + __v;
     }))
     .pipe(gulp.dest(function(file) {
       return file.base;
