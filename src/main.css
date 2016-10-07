@@ -59,6 +59,22 @@ nav a:hover {
   height: 100%;
 }
 
+.slider-for .slick-loading,
+.slider-nav .slick-loading {
+  background: url(/images/loading.svg);
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+
+  /* hack for prevent webkit gray border */
+  content:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+}
+.slider-nav .slick-loading {
+  background-size: contain;
+}
+
 .slider-nav {
   height: 10%;
   max-width: 100%;
