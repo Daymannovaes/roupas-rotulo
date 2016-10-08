@@ -29,6 +29,16 @@ main {
   left: 0;
 }
 
+.logo {
+  height: calc(100% - 38px);
+  margin: 10px 0 5px;
+}
+.logo > img {
+  height: 100%;
+}
+nav {
+  height: 22px;
+}
 nav ul {
   margin: 0;
   padding: 0;
