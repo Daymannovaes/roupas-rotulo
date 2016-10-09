@@ -1,13 +1,11 @@
 $(document).on('ready', function() {
-  $('.slider-for').slick({
+  $('.slider-for').on('lazyLoaded', checkImageContainer).slick({
     lazyLoad: 'progressive',
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,
-    asNavFor: '.slider-nav',
-    autoplay: true,
-    autoplaySpeed: 10 * 1000
+    asNavFor: '.slider-nav'
   });
 
   $('.slider-nav').on('init', function() {
@@ -27,16 +25,26 @@ $(document).on('ready', function() {
     _timeout = setTimeout(checkImageContainer, 50);
   });
 
+  var fillClass, removeClass;
   function checkImageContainer() {
     $('.slick-slide').each(function() {
-      var fillClass = ($(this).height() < $(this).width())
+      var container = $(this);
+      var img = container.find('img');
+
+      // container ratio and image ratio
+      var cratio = container.height() / container.width();
+      var iratio = img.height() / img.width();
+
+      fillClass = (cratio > iratio)
+        ? 'fillwidth'
+        : 'fillheight';
+
+      removeClass = (fillClass === 'fillwidth')
         ? 'fillheight'
         : 'fillwidth';
-      var removeClass = (fillClass === 'fillwidth')
-        ? 'fillheight'
-        : 'fillwidth';
-      $(this).find('img').addClass(fillClass);
-      $(this).find('img').removeClass(removeClass);
+
+      img.addClass(fillClass);
+      img.removeClass(removeClass);
     });
   }
   checkImageContainer();
