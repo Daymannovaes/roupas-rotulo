@@ -1,5 +1,10 @@
 $(document).on('ready', function() {
-  $('.slider-for').on('lazyLoaded', checkImageContainer).slick({
+  $('.slider-for')
+  .on('lazyLoaded', checkImageContainer)
+  .on('lazyProgress', function(e, slick, image, imageSource, progress) {
+    console.log('Progress of ' + imageSource + ': ' + progress);
+  })
+  .slick({
     lazyLoad: 'progressive',
     infinite: true,
     slidesToShow: 1,
