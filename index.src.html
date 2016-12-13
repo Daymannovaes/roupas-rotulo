@@ -37,79 +37,34 @@
 
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="images/logo.svg" alt="Logo Rótulo">
-    </div>
-    <nav>
-      <ul>
-        <li>
-          <a href="/loja">Loja</a>
-        </li>
-        <li>
-          <a href="/blog">Blog</a>
-        </li>
-        <li>
-          <a href="/facebook">Facebook</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="slider-for">
-      <div>
-        <img data-lazy="images/DSC_0164-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/DSC_0244-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/DSC_0382-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/DSC_0455-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/DSC_0471-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/DSC_0477-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/IMG_0023-2.jpg">
-      </div>
-    </section>
-    <section class="slider-nav">
-      <div>
-        <img data-lazy="images/DSC_0164-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/DSC_0244-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/DSC_0382-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/DSC_0455-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/DSC_0471-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/DSC_0477-2.jpg">
-      </div>
-      <div>
-        <img data-lazy="images/IMG_0023-2.jpg">
-      </div>
-    </section>
-  </main>
+  <div class="rellax">
+    I’m that default chill speed of "-2"
+  </div>
+  <div class="rellax" data-rellax-speed="7">
+    I’m super fast!!
+  </div>
+  <div class="rellax" data-rellax-speed="-4">
+    I’m extra slow and smooth
+  </div>
 
   <!-- build:js assets/main.js -->
   <script type="text/javascript" src="src/jquery/jquery.js"></script>
+  <script type="text/javascript" src="node_modules/rellax/rellax.js"></script>
   <script type="text/javascript" src="src/slick/slick.js"></script>
   <script type="text/javascript" src="src/main.js"></script>
   <!-- endbuild -->
+
+  <script>
+    // Accepts any class name
+    var rellax = new Rellax('.rellax');
+  </script>
+
+  <style type="text/css">
+    div.rellax {
+      padding: 300px;
+      border: 1px solid red;
+    }
+  </style>
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
