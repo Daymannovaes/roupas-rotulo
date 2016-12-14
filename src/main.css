@@ -19,14 +19,29 @@ section .portrait, section .landscape {
   display: inline-block;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   border: 3px solid white;
+
+  transition: 200ms all;
 }
-section .portrait {
-  width: 30.4%;
+section .portrait:hover, section .landscape:hover {
+
 }
 
+section .portrait {
+  width: 30%;
+}
 section .landscape {
-  width: 69.3%;
+  width: 70%;
+}
+
+@media (max-width: 35em) {
+  section .portrait {
+    width: 45%;
+  }
+  section .landscape {
+    width: 55%;
+  }
 }
 
 section .rellax {
