@@ -11,8 +11,8 @@
   <title>Rótulo</title>
 
   <!-- build:css assets/main.css -->
-  <link rel="stylesheet" type="text/css" href="src/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="src/slick-theme.slim.css"/>
+  <!-- <link rel="stylesheet" type="text/css" href="src/slick/slick.css"/> -->
+  <!-- <link rel="stylesheet" type="text/css" href="src/slick-theme.slim.css"/> -->
   <link rel="stylesheet" type="text/css" href="src/main.css"/>
   <!-- endbuild -->
 
@@ -37,19 +37,28 @@
 
 </head>
 <body>
-  <div class="rellax">
-    I’m that default chill speed of "-2"
-  </div>
-  <div class="rellax" data-rellax-speed="7">
-    I’m super fast!!
-  </div>
-  <div class="rellax" data-rellax-speed="-4">
-    I’m extra slow and smooth
-  </div>
+  <section class="portrait-on-left">
+    <img class="portrait" src="images/p1.jpg">
+    <img class="landscape" src="images/l1.jpg">
+
+    <img src="images/r1.jpg" class="rellax rellax-1" data-rellax-speed="4">
+  </section>
+  <section class="portrait-on-right">
+    <img class="landscape" src="images/l2.jpg">
+    <img class="portrait" src="images/p2.jpg">
+
+    <img src="images/r2.jpg" class="rellax rellax-2" data-rellax-speed="-2">
+  </section>
+  <section class="portrait-on-left">
+    <img class="portrait" src="images/p3.jpg">
+    <img class="landscape" src="images/l3.jpg">
+
+    <img src="images/r3.jpg" class="rellax rellax-3" data-rellax-speed="2">
+  </section>
 
   <!-- build:js assets/main.js -->
   <script type="text/javascript" src="src/jquery/jquery.js"></script>
-  <script type="text/javascript" src="node_modules/rellax/rellax.js"></script>
+  <script type="text/javascript" src="src/rellax.js"></script>
   <script type="text/javascript" src="src/slick/slick.js"></script>
   <script type="text/javascript" src="src/main.js"></script>
   <!-- endbuild -->

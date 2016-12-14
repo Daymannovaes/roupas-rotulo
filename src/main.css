@@ -8,145 +8,48 @@ html, body {
   box-sizing: border-box;
 }
 
+section {
+  position: relative;
+}
 
-header {
-  width: 100%;
-  height: 20vh;
+section .portrait {
+  width: 30.4%;
+}
 
-  text-align: center;
+section .landscape {
+  width: 69.3%;
+}
 
+section .rellax {
   position: absolute;
-  top: 0;
-  left: 0;
+
+  border: 4px solid #fff;
+  background: #fff;
+
+  bottom: -25vh;
+  height: 50vh;
+  z-index: 10;
+
+  box-shadow: 2px 2px 15px 0px;
 }
 
-main {
-  width: 100%;
-  height: 80vh;
-
-  position: absolute;
-  top: 20vh;
-  left: 0;
+section.portrait-on-right .rellax {
+  left: 22%;
 }
 
-.logo {
-  height: calc(100% - 38px);
-  margin: 10px 0 5px;
-}
-.logo > img {
-  height: 100%;
-}
-nav {
-  height: 22px;
-}
-nav ul {
-  margin: 0;
-  padding: 0;
-}
-nav li {
-  display: inline;
-  padding: 0 10px;
-}
-nav a {
-  text-decoration: none;
-  text-transform: lowercase;
-  color: #777;
-  padding: 5px 10px;
-  margin: 0 10px;
-  transition: 200ms color;
-}
-nav a:hover {
-  text-decoration: underline;
-  color: #222;
-}
-
-.slider-for {
-  height: calc(90% - 9px);
-  max-width: calc(100% - 70px);
-  margin: 0 auto 5px;
-}
-.slider-for > div {
-  height: 100%;
-}
-.slider-for .slick-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.slider-for .slick-loading,
-.slider-nav .slick-loading {
-  background: url(/images/loading.gif);
-  height: 100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position-x: 50%;
-  background-position-y: 50%;
-
-  /* hack for prevent webkit gray border */
-  content: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
-}
-.slider-nav .slick-loading {
-  background-size: contain;
-}
-
-.slider-nav {
-  height: 10%;
-  max-width: 100%;
-}
-
-.slider-nav .slick-list, .slider-nav .slick-track {
-  width: 100% !important;
-}
-
-.flex {
-  display: flex;
-}
-
-.slider-nav .slick-slide {
-  max-width: 80px;
-  transition: all 200ms;
-}
-.slider-nav .slick-slide:not(.slick-current) {
-  transform: scale(0.9);
-  opacity: 0.6;
+section.portrait-on-left .rellax {
+  right: 22%;
 }
 
 
-.slick-slide img {
-  margin: 0 auto;
+/* ---- */
+img.rellax.rellax-1 {
+    bottom: -40vh;
 }
-
-.slick-track,
-.slick-slide,
-.fillheight {
-  height: 100%;
+img.rellax.rellax-2 {
+    top: 7vh;
+    left: 6%;
 }
-
-.fillwidth {
-  width: 100%;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  color: #000;
-}
-
-.slick-prev,
-.slick-next {
-  display: block;
-  height: 100%;
-  width: 40px;
-  background: rgba(221, 221, 221, 0.2);
-  transition: all 200ms;
-}
-
-.slick-prev:hover,
-.slick-next:hover,
-.slick-prev:focus,
-.slick-next:focus {
-  display: block;
-  height: 100%;
-  width: 40px;
-  background: rgba(221, 221, 221, 0.5);
+img.rellax.rellax-3 {
+    right: 6vh;
 }
