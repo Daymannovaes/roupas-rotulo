@@ -10,8 +10,17 @@ html, body {
 
 section {
   position: relative;
+  max-height: 90vh;
+  height: 50vw;
 }
 
+section .portrait, section .landscape {
+  height: 100%;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 3px solid white;
+}
 section .portrait {
   width: 30.4%;
 }
@@ -27,6 +36,7 @@ section .rellax {
   background: #fff;
 
   bottom: -25vh;
+  max-height: 30vw;
   height: 50vh;
   z-index: 10;
 
@@ -44,12 +54,12 @@ section.portrait-on-left .rellax {
 
 /* ---- */
 img.rellax.rellax-1 {
-    bottom: -40vh;
+  bottom: -40vh;
 }
 img.rellax.rellax-2 {
-    top: 7vh;
-    left: 6%;
+  top: 7vh;
+  left: 6%;
 }
 img.rellax.rellax-3 {
-    right: 6vh;
+  right: 6vh;
 }
