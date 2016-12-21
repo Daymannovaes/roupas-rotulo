@@ -4,6 +4,10 @@ html, body {
   background: #fafafa;
 }
 
+.overflow {
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
 }

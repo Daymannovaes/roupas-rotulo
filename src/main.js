@@ -13,6 +13,7 @@ $(document).on('ready', function() {
   .done( function( instance ) {
     console.log('all images successfully loaded');
     $('.loading').hide();
+    $('body').removeClass('overflow');
     $('header').show();
   })
   .fail( function() {
