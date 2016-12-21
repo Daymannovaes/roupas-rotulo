@@ -37,29 +37,54 @@
 
 </head>
 <body>
+
+  <header style="display: none;">
+    <nav>
+      <div class="header-text">
+        <a href="https://www.facebook.com/RoupasRotulo" target="_blank">facebook</a>
+      </div>
+      <div class="header-image">
+        <a href="https://roupasrotulo.com"><img src="images/logo-1.png" alt="Roupas Rótulo"></a>
+      </div>
+      <div class="header-text">
+        <a href="https://www.instagram.com/roupasrotulo/" target="_blank">instagram</a>
+      </div>
+    </nav>
+  </header>
+  <div class="loading">
+    <div>
+      <img src="images/loading.gif" alt="carregando">
+    </div>
+    <p>Carregando: 0%</p>
+    <div class="loading-progress">
+      <hr>
+      <img src="images/logo-1.png">
+    </div>
+  </div>
+
   <section class="portrait-on-left">
-    <div class="portrait" style="background-image: url('images/p1.jpg')"></div>
-    <div class="landscape" style="background-image: url('images/l1.jpg')"></div>
+    <div class="section-image portrait" style="background-image: url('images/p1.jpg')"></div>
+    <div class="section-image landscape" style="background-image: url('images/l1.jpg')"></div>
 
     <img src="images/r1.jpg" class="rellax rellax-1" data-rellax-speed="4">
   </section>
   <section class="portrait-on-right">
-    <div class="landscape" style="background-image: url('images/l2.jpg')"></div>
-    <div class="portrait" style="background-image: url('images/p2.jpg')"></div>
+    <div class="section-image landscape" style="background-image: url('images/l2.jpg')"></div>
+    <div class="section-image portrait" style="background-image: url('images/p2.jpg')"></div>
 
     <img src="images/r2.jpg" class="rellax rellax-2" data-rellax-speed="-2">
   </section>
   <section class="portrait-on-left">
-    <div class="portrait" style="background-image: url('images/p3.jpg')"></div>
-    <div class="landscape" style="background-image: url('images/l3.jpg')"></div>
+    <div class="section-image portrait" style="background-image: url('images/p3.jpg')"></div>
+    <div class="section-image landscape" style="background-image: url('images/l3.jpg')"></div>
 
     <img src="images/r3.jpg" class="rellax rellax-3" data-rellax-speed="2">
   </section>
 
   <!-- build:js assets/main.js -->
   <script type="text/javascript" src="src/jquery/jquery.js"></script>
+  <script type="text/javascript" src="src/images-loaded.js"></script>
   <script type="text/javascript" src="src/rellax.js"></script>
-  <script type="text/javascript" src="src/slick/slick.js"></script>
   <script type="text/javascript" src="src/main.js"></script>
   <!-- endbuild -->
 
