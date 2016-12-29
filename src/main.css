@@ -60,7 +60,7 @@ header div.header-text {
   animation-timing-function: ease-in-out;
 }
 
-header img {
+header img, header .logo {
   height: 100%;
 }
 
@@ -80,6 +80,15 @@ header div.header-image a {
   animation-timing-function: ease-in-out;
 }
 
+header svg {
+  opacity: 0;
+  animation-name: header-svg-transition;
+  animation-duration: 0.2s;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
 header ul {
   margin: 0;
   padding: 0;
@@ -90,6 +99,10 @@ header ul {
 
 header li {
   display: inline;
+}
+
+#logo-rotulo-circle {
+  animation: circle-loading 7s infinite cubic-bezier(0.42, 0, 0, 0.98)
 }
 
 @keyframes background-fade {
@@ -110,6 +123,27 @@ header li {
 @keyframes header-text-transition {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes header-svg-transition {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes hideshow {
+  0% { opacity: 1; }
+  10% { opacity: 1; }
+  15% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes circle-loading {
+  10% { transform: translate(-980px,-30px); }
+  30% { transform: translate(-970px,1250px); }
+  50% { transform: translate(-960px,2500px); }
+  60% { transform: translate(60px,2500px); }
+  80% { transform: translate(75px,1250px); }
+  100% { transform: translate(90px,-30px); }
 }
 
 .loading {
@@ -149,7 +183,8 @@ section {
   max-height: 90vh;
   height: 50vw;
 
-  border: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
 }
 
 section .portrait, section .landscape {
