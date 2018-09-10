@@ -14,15 +14,15 @@
     "aws:deploy:images": "aws s3 cp images/ s3://roupasrotulo.com/images --recursive --cache-control max-age=31536000"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.13",
-    "gulp-html-replace": "^1.6.1",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-html-replace": "^1.6.2",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-if": "^2.0.1",
-    "gulp-rename": "^1.2.2",
+    "gulp-if": "^2.0.2",
+    "gulp-rename": "^1.4.0",
     "gulp-rev": "^7.1.2",
-    "gulp-uglify": "^2.0.0",
-    "gulp-useref": "^3.1.2",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.5",
     "run-sequence": "^1.2.2"
   },
   "repository": {
@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/Daymannovaes/roupas-rotulo#readme",
   "dependencies": {
-    "jquery": "^2.2.0",
-    "rellax": "^0.1.0"
+    "rellax": "^0.1.0",
+    "jquery": "^3.3.1"
   }
 }

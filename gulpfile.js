@@ -22,7 +22,14 @@ gulp.task('htmlmin', function () {
 gulp.task('bundle', function () {
   var __v = Date.now();
   return gulp.src('index.src.html')
-    .pipe(useref({ versioning: __v }))
+        .pipe(useref({
+            transformTargetPath: function(filename, type) {
+                var replace = new RegExp(`.${type}$`);
+                return filename.replace(replace, `.${__v}.${type}`);
+                console.log('\n\n\a\n\n', b);
+                return a;
+            }
+        }))
     .pipe(gulpif('*.js', uglify()))
     .pipe(gulpif('*.css', minifyCss()))
     .pipe(rename(function(path) {
@@ -34,6 +41,4 @@ gulp.task('bundle', function () {
     }));
 });
 
-gulp.task('default', function(done) {
-    sequence('bundle', 'htmlmin', done);
-});
+gulp.task('default', gulp.series('bundle', 'htmlmin', done => done()));
