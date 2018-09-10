@@ -1,0 +1,43 @@
+{
+  "name": "roupas-rotulo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "static-server -p 8080",
+    "deploy": "npm run build && npm run aws",
+    "build": "rm -rf assets/ && gulp",
+
+    "aws": "npm run aws:clean && npm run aws:deploy",
+    "aws:clean": "aws s3 rm s3://roupasrotulo.com/assets --recursive",
+
+    "aws:deploy": "npm run aws:deploy:index && npm run aws:deploy:assets",
+    "aws:deploy:index": "aws s3 cp index.html s3://roupasrotulo.com --cache-control max-age=1800",
+    "aws:deploy:assets": "aws s3 cp assets/ s3://roupasrotulo.com/assets --recursive --cache-control max-age=31536000",
+    "aws:deploy:images": "aws s3 cp images/ s3://roupasrotulo.com/images --recursive --cache-control max-age=31536000"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-html-replace": "^1.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^7.1.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.2",
+    "run-sequence": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daymannovaes/roupas-rotulo.git"
+  },
+  "author": "Dayman Novaes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daymannovaes/roupas-rotulo/issues"
+  },
+  "homepage": "https://github.com/Daymannovaes/roupas-rotulo#readme",
+  "dependencies": {
+    "jquery": "^2.2.0"
+  }
+}
