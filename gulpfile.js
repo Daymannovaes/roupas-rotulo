@@ -34,6 +34,4 @@ gulp.task('bundle', function () {
     }));
 });
 
-gulp.task('default', function(done) {
-    sequence('bundle', 'htmlmin', done);
-});
+gulp.task('default', gulp.series('bundle', 'htmlmin', done => done()));
