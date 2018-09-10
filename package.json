@@ -4,7 +4,11 @@
   "description": "",
   "scripts": {
     "start": "static-server -p 8080",
-    "deploy": "npm run build && npm run aws",
+    "predeloy": "npm run build",
+    "deploy": "npm run deploy:clean && npm run deploy:copy && npm run deploy:gh",
+    "deploy:clean": "rm -rf dist/ && mkdir dist",
+    "deploy:copy": "cp -r images/ dist/images && cp -r assets/ dist/assets && cp index.html dist/index.html && cp favicon.ico dist/favicon.ico",
+    "deploy:gh": "gh-pages -d dist",
     "build": "rm -rf assets/ && gulp",
     "aws": "npm run aws:clean && npm run aws:deploy",
     "aws:clean": "aws s3 rm s3://roupasrotulo.com/assets --recursive",
@@ -14,6 +18,7 @@
     "aws:deploy:images": "aws s3 cp images/ s3://roupasrotulo.com/images --recursive --cache-control max-age=31536000"
   },
   "devDependencies": {
+    "gh-pages": "^1.2.0",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^2.3.2",
     "gulp-html-replace": "^1.6.2",
