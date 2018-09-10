@@ -4,149 +4,250 @@ html, body {
   background: #fafafa;
 }
 
+.overflow {
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
 }
 
-
 header {
   width: 100%;
-  height: 20vh;
+  height: 100vh;
 
-  text-align: center;
-
-  position: absolute;
-  top: 0;
-  left: 0;
+  animation-name: header-transition;
+  animation-duration: 0.5s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
 }
 
-main {
+header nav {
   width: 100%;
-  height: 80vh;
-
-  position: absolute;
-  top: 20vh;
-  left: 0;
-}
-
-.logo {
-  height: calc(100% - 38px);
-  margin: 10px 0 5px;
-}
-.logo > img {
   height: 100%;
-}
-nav {
-  height: 22px;
-}
-nav ul {
-  margin: 0;
-  padding: 0;
-}
-nav li {
-  display: inline;
-  padding: 0 10px;
-}
-nav a {
-  text-decoration: none;
-  text-transform: lowercase;
-  color: #777;
-  padding: 5px 10px;
-  margin: 0 10px;
-  transition: 200ms color;
-}
-nav a:hover {
-  text-decoration: underline;
-  color: #222;
-}
 
-.slider-for {
-  height: calc(90% - 9px);
-  max-width: calc(100% - 70px);
-  margin: 0 auto 5px;
-}
-.slider-for > div {
-  height: 100%;
-}
-.slider-for .slick-slide {
+  background-color: white;
+  animation-name: background-fade;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.slider-for .slick-loading,
-.slider-nav .slick-loading {
-  background: url(/images/loading.gif);
+header div {
   height: 100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position-x: 50%;
-  background-position-y: 50%;
+  margin: 0 20px;
 
-  /* hack for prevent webkit gray border */
-  content: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
-}
-.slider-nav .slick-loading {
-  background-size: contain;
-}
+  text-align: center;
 
-.slider-nav {
-  height: 10%;
-  max-width: 100%;
-}
-
-.slider-nav .slick-list, .slider-nav .slick-track {
-  width: 100% !important;
-}
-
-.flex {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.slider-nav .slick-slide {
-  max-width: 80px;
-  transition: all 200ms;
-}
-.slider-nav .slick-slide:not(.slick-current) {
-  transform: scale(0.9);
-  opacity: 0.6;
-}
+header div.header-text {
+  opacity: 0;
 
-
-.slick-slide img {
-  margin: 0 auto;
+  animation-name: header-text-transition;
+  animation-duration: 0.25s;
+  animation-delay: 3.1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
 }
 
-.slick-track,
-.slick-slide,
-.fillheight {
+header img, header .logo {
   height: 100%;
 }
 
-.fillwidth {
+header a {
+  color: #e0e0e0;
+  text-align: center;
+}
+
+header div.header-image a {
+  text-align: center;
+  height: 50%;
+
+  animation-name: header-a-transition;
+  animation-duration: 0.3s;
+  animation-delay: 2.65s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+header svg {
+  opacity: 0;
+  animation-name: header-svg-transition;
+  animation-duration: 0.2s;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  text-align: center;
+}
+
+header li {
+  display: inline;
+}
+
+#logo-rotulo-circle {
+  animation: circle-loading 7s infinite cubic-bezier(0.42, 0, 0, 0.98)
+}
+
+@keyframes background-fade {
+  from { background-color: white; }
+  to { background-color: black; }
+}
+
+@keyframes header-transition {
+  from { height: 100vh; }
+  to { height: 16vh; }
+}
+
+@keyframes header-a-transition {
+  from { height: 50%; }
+  to { height: 80%; }
+}
+
+@keyframes header-text-transition {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes header-svg-transition {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes hideshow {
+  0% { opacity: 1; }
+  10% { opacity: 1; }
+  15% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes circle-loading {
+  10% { transform: translate(-980px,-30px); }
+  30% { transform: translate(-970px,1250px); }
+  50% { transform: translate(-960px,2500px); }
+  60% { transform: translate(60px,2500px); }
+  80% { transform: translate(75px,1250px); }
+  100% { transform: translate(90px,-30px); }
+}
+
+.loading {
   width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: white;
+  z-index: 100;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.loading-progress img {
+  height: 50px;
+  background: #000;
+  padding: 10px 5px;
+  margin-left: 5px;
+  top: 25px;
+  position: relative;
+}
+.loading-progress {
+  text-align: left;
+}
+.loading hr {
+  transition: 3s width;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  height: 6px;
+  background: black;
 }
 
-.slick-prev:before,
-.slick-next:before {
-  color: #000;
+section {
+  position: relative;
+  max-height: 90vh;
+  height: 50vw;
+
+  border-left: 2px solid white;
+  border-right: 2px solid white;
 }
 
-.slick-prev,
-.slick-next {
-  display: block;
+section .portrait, section .landscape {
   height: 100%;
-  width: 40px;
-  background: rgba(221, 221, 221, 0.2);
-  transition: all 200ms;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 3px solid white;
+
+  transition: 200ms all;
+}
+section .portrait:hover, section .landscape:hover {
+
 }
 
-.slick-prev:hover,
-.slick-next:hover,
-.slick-prev:focus,
-.slick-next:focus {
-  display: block;
-  height: 100%;
-  width: 40px;
-  background: rgba(221, 221, 221, 0.5);
+section .portrait {
+  width: 30%;
+}
+section .landscape {
+  width: 70%;
+}
+
+@media (max-width: 35em) {
+  section .portrait {
+    width: 45%;
+  }
+  section .landscape {
+    width: 55%;
+  }
+}
+
+section .rellax {
+  position: absolute;
+
+  border: 4px solid #fff;
+  background: #fff;
+
+  bottom: -25vh;
+  max-height: 30vw;
+  height: 50vh;
+  z-index: 10;
+
+  box-shadow: 2px 2px 15px 0px;
+}
+
+section.portrait-on-right .rellax {
+  left: 22%;
+}
+
+section.portrait-on-left .rellax {
+  right: 22%;
+}
+
+
+/* ---- */
+img.rellax.rellax-1 {
+  bottom: -40vh;
+}
+img.rellax.rellax-2 {
+  top: 7vh;
+  left: 6%;
+}
+img.rellax.rellax-3 {
+  right: 6vh;
 }

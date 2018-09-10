@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/Daymannovaes/roupas-rotulo#readme",
   "dependencies": {
+    "rellax": "^0.1.0",
     "jquery": "^3.3.1"
   }
 }
